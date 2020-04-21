@@ -21,12 +21,13 @@ mongo = PyMongo(app)
 
 
 # ROUTE FOR INDEX.HTML
-@app.route('/')
 @app.route('/index')
 def index():
     # LANDING GETS 4 REVIEWS THAT HAVE THE MOST UPVOTES
-    four_books = mongo.db.reviews.find().sort([('upvotes', DESCENDING)]).limit(4)
-    return render_template('index.html', title='Home', reviews=four_books)
+    reviews = mongo.db.reviews.find().sort([('upvote', DESCENDING)]).limit(4)
+    return render_template('index.html', title='Home', reviews=reviews)
+
+
 
 
 if __name__ == '__main__':
