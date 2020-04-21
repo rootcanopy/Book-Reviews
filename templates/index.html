@@ -1,1 +1,22 @@
 {% extends 'base.html' %}
+{% block content %}
+<!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
+
+<!-- -->
+
+<div class="card mb-5" style="width: 14rem;">
+    {% for review in reviews %}
+        <div class="col-lg-3 col-md-6 mb-5">
+            <img class="card-img-top" src="{{ reviews.image }}" alt="Cover Image">
+            <div class="card-body">
+                <h4 class="card-title">{{ reviews.title }}</h4>
+                <p class="card-text">{{ reviews.summary }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

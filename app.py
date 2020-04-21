@@ -16,6 +16,7 @@ app.config['MONGO_DBNAME'] = 'book_review'
 app.config['SECRET_KEY'] = '8bf1555c499fe3cc55021fd1e87585e5'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
+
 mongo = PyMongo(app)
 
 
@@ -26,11 +27,6 @@ def index():
     # LANDING GETS 4 REVIEWS THAT HAVE THE MOST UPVOTES
     four_books = mongo.db.reviews.find().sort([('upvotes', DESCENDING)]).limit(4)
     return render_template('index.html', title='Home', reviews=four_books)
-
-
-
-
-
 
 
 if __name__ == '__main__':
