@@ -10,8 +10,6 @@ import re
 
 
 app = Flask(__name__)
-
-
 # SECRET KEY FOR CSRF #TODO + DB + MONGOURI
 app.config['MONGO_DBNAME'] = 'book_review'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
