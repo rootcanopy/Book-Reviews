@@ -3,7 +3,7 @@ import env
 from flask import Flask, render_template, redirect, url_for, flash, request, session
 from flask_pymongo import pymongo, PyMongo, DESCENDING
 from bson.objectid import ObjectId
-#from forms import RegistrationForm, LoginForm, ReviewForm
+from forms import RegistrationForm, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
 import math
 import re
@@ -41,9 +41,10 @@ def register():
 
 
 #ROUTE FOR LOGIN
-@app.route('/')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login', title='Log In')
+    form = LoginForm():
+    return render_template('login.html', title='Log In', form=form)
 
 
 
