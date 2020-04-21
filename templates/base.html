@@ -60,6 +60,7 @@
 </header>
 
 <!-- FOR ERROR IN ERRORS - FORMS -->
+<div class"container">
     <div class="row">
         <div class="col-md-8">
           {% with messages = get_flashed_messages(with_categories=true) %}
@@ -73,6 +74,7 @@
           {% endwith %}
         </div>
     </div>
+</div>
 
 <div class="container mt-5">
     {% block content %} {% endblock content%}
