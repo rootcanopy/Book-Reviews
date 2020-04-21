@@ -69,13 +69,15 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-        
+    
     return render_template('login.html', title='Log In', form=form)
 
 
 @app.route('/my_account')
 def my_account():
-    return render_template('my_account.html', title='My Account')
+    #FOR USER ACCOUNT
+    if 
+    return render_template('my_account.html', title='My Account', users=users)
 
 """
 @app.route('/add_review')
