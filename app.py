@@ -18,3 +18,6 @@ app.config['SECRET_KEY'] = '8bf1555c499fe3cc55021fd1e87585e5'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
+
+
+# ROUTE FOR INDEX.HTML
