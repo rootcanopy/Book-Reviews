@@ -19,6 +19,12 @@ body {
     height: 100%;
 }
 
+.searchbutton{
+    opacity: .7;
+    border-radius: .3rem;    
+}
+
+
 /* NAVBAR STYLES */
 .bg-dark{
     background-color: #8B5C57!important;
@@ -28,4 +34,5 @@ body {
 }
 .nav-item{
     color: black;
-  }
+}
+
