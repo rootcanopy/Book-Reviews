@@ -7,11 +7,12 @@ body {
 .jumbotron {
     background-image: url('./images/cute.jpg');
     background-repeat: no-repeat;
-    /*background-size: cover;*/
-    max-width:100%;
+    background-size: cover;
+    /*max-width:100vw;*/
     height:auto;
     color: black;
     font-weight: bold;
+    margin:0;
 }
 
 .card {
@@ -20,9 +21,11 @@ body {
 
 /* NAVBAR STYLES */
 .bg-dark{
-    background-color: #EC7063!important;
+    background-color: #8B5C57!important;
 }
-
 .navbar-light .navbar-brand  {
-    color: #F5FAFA;
+    color: black!important;
 }
+.nav-item{
+    color: black;
+  }
