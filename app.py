@@ -5,7 +5,7 @@ import re
 from flask import Flask, render_template, redirect, url_for, flash, request, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from forms import RegistrationForm, LoginForm, ReviewForm
+#from forms import RegistrationForm, LoginForm, ReviewForm
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -21,3 +21,15 @@ mongo = PyMongo(app)
 
 
 # ROUTE FOR INDEX.HTML
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+            app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
+            debug=True)
