@@ -1,54 +1,70 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
 
-<!-- -->
-<div class="card mb-5" style="width: 14rem;">
+<header class="jumbotron my-4">
+        <h1 class="display-3">A Glut of </h1>
+        <p class="lead ">You feed me, I feed You</p>
+        <div class="row">
+            <div class="col-lg-4">
+                <form class="input-group mb-3" action="{{ url_for('search') }}">
+                    <input class="form-control" type="text" name="query"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">Find Recipes!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</header>
+
+<main>
+    <!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
     {% for review in reviews %}
-    <div class="row">
-        <div class="col-lg-3 col-md-6 mb-5">
-            <img class="card-img-top" src="{{ reviews.image }}" alt="Cover Image">
+    <div class="card mb-5" style="width: 14rem;">
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <img class="card-img-top" src="{{ reviews.image }}" alt="Cover Image">
 
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-5"><span class="book-title">
-                        <strong>Author:</strong></span>
-                        <span class="text-capitalize">{{ reviews.author }}</span>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 mb-5"><span class="book-title">
+                            <strong>Author:</strong></span>
+                            <span class="text-capitalize">{{ reviews.author }}</span>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-5"><span class="book-title">
+                            <strong>Title:</strong></span>
+                            <span class="text-capitalize">{{ reviews.title }}</span>
+                        </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mb-5"><span class="book-title">
-                        <strong>Title:</strong></span>
-                        <span class="text-capitalize">{{ reviews.title }}</span>
+                    <hr />
+                    <!-- BOOK SUMMARY -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 mb-5"><span class="book-title text-capitalize">
+                            <strong>Summary:</strong></span>
+                            <span class="">{{ reviews.summary }}</span>
+                        </div> 
                     </div>
+
+                    <hr />
+                    <!-- FULL REVIEW -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 mb-5"><a class="btn btn-primary"
+                                href="#TODO" >Full Review</a>
+                        </div>
+                        <div class="col-md-2"><span class="book-title">Upvotes:</span>
+                            <span class="upvote"><i class="fas fa-thumbs-up"></i> # <span>
+                        </div>
+                    </div>
+                    
+
                 </div>
-
-                <hr />
-                <!-- BOOK SUMMARY -->
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-5"><span class="book-title text-capitalize">
-                        <strong>Summary:</strong></span>
-                        <span class="">{{ reviews.summary }}</span>
-                    </div> 
-                </div>
-
-                <hr />
-                <!-- FULL REVIEW -->
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-5"><a class="btn btn-primary"
-                            href="#TODO" >Full Review</a>
-                    </div>
-                    <div class="col-md-2"><span class="book-title">Upvotes:</span>
-                        <span class="upvote"><i class="fas fa-thumbs-up"></i> # <span>
-                    </div>
-                </div>
-                
 
             </div>
-
         </div>
     </div>
-    {% endfor %}
-</div>
-
+</main>
+{% endfor %}
 
 {% endblock %}

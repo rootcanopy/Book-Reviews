@@ -23,9 +23,9 @@
 <body>
 <!-- -->
 {% if 'username' in session %}
-    <div class="text-light font-italic bg-dark pt-2 pr-4 text-center">welcome back, {{ session['username'] }}</div>
+    <div class="text-light font-italic bg-dark pt-2 pr-4 text-center">Welcome Back, {{ session['username'] }}</div>
 {% else %}
-    <div class="text-light font-italic bg-dark pt-2 pr-4 text-center">please <a href="{{ url_for('login') }}">login</a>
+    <div class="text-light font-italic bg-dark pt-2 pr-4 text-center">Please <a href="{{ url_for('login') }}">login</a>
         or <a href="{{ url_for('register') }}">Register</a>.
     </div>
 {% endif %}
