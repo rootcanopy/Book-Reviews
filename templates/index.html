@@ -1,31 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-
 <main>
     <div class="row">
     <!-- MAIN PAGE -->
         <div class="col-12">
             <div class="jumbotron">
                 <div class="container">
-
-
-
+                <!-- JUMBO TEXT -->
+                    <h2 class="jumbo-awesome"></h2>
+                    <p class="lead">
+                        <strong>Tell us about your AwesomeReads!<br>
+                                Give reviews a like!<br>
+                                Write your reviews on AwesomeReads!
+                        </strong>
+                    </p>
                 </div>
+                <!-- SEARCH BAR-->
+                <div class="mt-4 ml-4"><br>
+                    <form class="form-inline" action="{{ (url_for('search')) }}">
+                        <div class="form-group ">
+                            <input class="form-control-sm mr-1 searchbar small" type="text"
+                                    placeholder="Search Site" name="search" size="12">
+                                <button class="  mr-1 searchbar small mr-1"
+                                    type="submit"><strong><i class="fa fa-search" aria-hidden="true"></i></strong>
+                                </button>
+                        </div>
+                    </form>
+                </form>
             </div>
         </div>
     </div>
 </main>
 
 
-<article>
     <!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
-
+    {% for review in reviews %}
     <div class="card mb-5" style="width: 14rem;">
         
         <div class="row">
-        {% for review in reviews %}
+        
             <div class="col-lg-3 col-md-6 mb-5">
                 <img class="card-img-top" src="{{ reviews.image }}" alt="Cover Image">
 
@@ -75,10 +89,8 @@
                 </div>
 
             </div>
-        {% endfor %}    
         </div>
     </div>
-</article>
-
+    {% endfor %}
 
 {% endblock %}

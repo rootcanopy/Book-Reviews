@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     {% if title %}
-        <title>Awesome-Reads {{ title }}</title>
+        <title>AwesomeReads - {{ title }}</title>
     {% else %}
-        <title>Awesome-Reads {{ title }}</title>
+        <title>AwesomeReads</title>
     {% endif %}
     <!-- BOOTSTRAP LINK -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -41,7 +41,7 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Features</a>
                     <a class="nav-item nav-link" href="#">Pricing</a>
                     <a class="nav-item nav-link disabled" href="#">Disabled</a>
@@ -50,7 +50,7 @@
     </nav>
 </header>
 
-</body>
+
 
 <footer class="py-5 bg-dark">
         
@@ -58,7 +58,7 @@
             <p class="m-0 text-center text-white">Copyright &copy; Awesome Reads 2020</p>
         </div>
         
-    </footer>
+</footer>
 
     <!-- SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "></script>
@@ -66,6 +66,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js "></script>
 
     <script src="{{url_for('static', filename='js/main.js')}}"></script>
-
+</body>
 
 </html>
