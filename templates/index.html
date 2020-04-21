@@ -3,18 +3,50 @@
 <!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
 
 <!-- -->
-
 <div class="card mb-5" style="width: 14rem;">
     {% for review in reviews %}
+    <div class="row">
         <div class="col-lg-3 col-md-6 mb-5">
             <img class="card-img-top" src="{{ reviews.image }}" alt="Cover Image">
+
             <div class="card-body">
-                <h4 class="card-title">{{ reviews.title }}</h4>
-                <p class="card-text">{{ reviews.summary }}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-5"><span class="book-title">
+                        <strong>Author:</strong></span>
+                        <span class="text-capitalize">{{ reviews.author }}</span>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-5"><span class="book-title">
+                        <strong>Title:</strong></span>
+                        <span class="text-capitalize">{{ reviews.title }}</span>
+                    </div>
+                </div>
+
+                <hr />
+                <!-- BOOK SUMMARY -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-5"><span class="book-title text-capitalize">
+                        <strong>Summary:</strong></span>
+                        <span class="">{{ reviews.summary }}</span>
+                    </div> 
+                </div>
+
+                <hr />
+                <!-- FULL REVIEW -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-5"><a class="btn btn-primary"
+                            href="#TODO" >Full Review</a>
+                    </div>
+                    <div class="col-md-2"><span class="book-title">Upvotes:</span>
+                        <span class="upvote"><i class="fas fa-thumbs-up"></i> # <span>
+                    </div>
+                </div>
+                
+
             </div>
 
         </div>
+    </div>
     {% endfor %}
 </div>
 
