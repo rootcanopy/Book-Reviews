@@ -7,8 +7,7 @@ body {
 .jumbotron {
     background-image: url('https://hdwallpaperim.com/wp-content/uploads/2017/08/23/457122-books-mountains-Photoshop-imagination-peaceful-748x409.jpg');
     background-repeat: no-repeat;
-    width: 80vw;
-    height: 50vh;
+    background-size: cover;
     color: black;
     font-weight: bold;
 }

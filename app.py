@@ -29,14 +29,28 @@ def base():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     # LANDING GETS 4 REVIEWS THAT HAVE THE MOST UPVOTES
-    four_reviews = mongo.db.reviews.find().sort([('upvote', pymongo.DESCENDING)]).limit(4)
+    four_reviews = mongo.db.reviews.find().sort([('upvote', DESCENDING)]).limit(4)
     
     return render_template('index.html', title='Home', four_reviews=four_reviews)
 
 
+#ROUTE FOR REGISTER
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    return render_template('register.html', title='Register')
+
+
+#ROUTE FOR LOGIN
+@app.route('/')
+def login():
+    return render_template('login', title='Log In')
+
+
+
+
+
 @app.route('/add_review')
 def add_review():
-
     user = mongo.db.reviews
     create_review = {'author': 'jack', 'title': 'My Toe', 'summary': 'how i stopped jamming'}
     add_review = mongo.db.reviews.insert_one(create_review)
