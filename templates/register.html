@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<div class="content-section">
+    <div class="card-header reviewer"><span class="review-title"><strong>Register</strong></span></div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <!-- REGISTRATION FORM -->
+                <form method="POST" action="/register">
+                    <!-- token for CRSF -->
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Join & Post!</legend>
+                        <!-- SECTION FOR USERNAME -->
+                        <div class="form-group">
+                            {{ form.username.label(class="form-control-label") }}
+
+                            <!-- USERNAME ERROR HANDLING -->
+                            {% if form.username.errors %}
+                            {{ form.username(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for errors in form.username.errors %}
+                                <span> {{ error }} </span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.username(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <!-- SECTION FOR EMAIL-->
+                        <div class="form-group">
+                            {{ form.email.label(class="form-control-label") }}
+
+                            <!-- EMAIL ERROR HANDLING -->
+                            {% if form.email.errors %}
+                                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                    {% for errors in form.email.errors %}
+                                <span> {{ error }} </span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.email(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+
+                        <!-- SECTION FOR PASSWORD -->
+                            <div class="form-group">
+                                {{ form.password.label(class="form-control-label") }}
+
+                        <!-- PASSWORD ERROR HANDLING -->
+                            {% if form.password.errors %}
+                                {{ form.password(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for errors in form.password.errors %}
+                                <span> {{ error }} </span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form.password(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <!-- SECTION FOR CONFIRM PASSWORD-->
+                        <div class="form-group">
+                            {{ form.password_repeat.label(class="form-control-label") }}
+
+                            <!-- USERNAME ERROR HANDLING -->
+                            {% if form.password_repeat.errors %}
+                                {{ form.password_repeat(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for errors in form.password_repeat.errors %}
+                                <span> {{ error }} </span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.password_repeat(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+
+                    </fieldset>
+                    <!-- SUBMIT BUTTON -->
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="border-top pt-3">
+    <small class="text-muted">
+        Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Log In!</a>
+    </small>
+</div>
+
+{% endblock content %}

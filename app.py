@@ -25,6 +25,8 @@ def base():
     return render_template('base.html')
 
 
+
+
 # ROUTE FOR INDEX.HTML
 @app.route('/index', methods=['GET', 'POST'])
 def index():
@@ -37,13 +39,16 @@ def index():
 #ROUTE FOR REGISTER
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html', title='Register')
+    form = RegistrationForm()
+
+    return render_template('register.html', title='Register', form=form)
 
 
 #ROUTE FOR LOGIN
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = LoginForm():
+    form = LoginForm()
+        
     return render_template('login.html', title='Log In', form=form)
 
 
