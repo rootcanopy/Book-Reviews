@@ -1,0 +1,5 @@
+@app.route('/index')
+def index():
+    # LANDING GETS 4 REVIEWS THAT HAVE THE MOST UPVOTES
+    reviews = mongo.db.reviews.find().sort([('upvote', pymongo.DESCENDING)]).limit(4)
+    return render_template('index.html', title='Home', reviews=reviews)

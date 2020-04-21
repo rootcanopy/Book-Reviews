@@ -41,15 +41,18 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link active" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Features</a>
-                    <a class="nav-item nav-link" href="#">Pricing</a>
-                    <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-item nav-link active" href="{{ url_for('index') }}">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">About</a>
+                    <a class="nav-item nav-link" href="#">Register</a>
+                    <a class="nav-item nav-link" href="#">Login</a>
                 </div>
             </div>
     </nav>
 </header>
-{% block content %} {% endblock content%}
+
+<div class="container mt-5">
+    {% block content %} {% endblock content%}
+</div>
 
 
 <footer class="py-5 bg-dark">
