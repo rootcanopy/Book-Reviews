@@ -1,9 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, \
+from wtforms import StringField, PasswordField, BooleanField,\
                     SubmitField, TextAreaField, IntegerField
 from wtforms.validators import DataRequired, Length, \
                             EqualTo, Email
 from flask_wtf.file import FileField, FileAllowed
+
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -24,6 +25,6 @@ class ReviewForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     summary = TextAreaField('Summary',validators=[DataRequired()])
     review = TextAreaField('Review',validators=[DataRequired()])
-    image = FileField('Image Only', validators=[FileAllowed()])
+    image = FileField('Image Only')
     your_rating = IntegerField('Rating', validators=[DataRequired()])
     add_review = SubmitField('Add Review')

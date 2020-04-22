@@ -4,8 +4,7 @@ from flask import Flask, render_template, redirect, \
         url_for, flash, request, session
 from flask_pymongo import pymongo, PyMongo, DESCENDING
 from bson.objectid import ObjectId
-from forms import RegistrationForm, LoginForm, ReviewForm,\
-                                FileField, FileAllowed
+from forms import RegistrationForm, LoginForm, ReviewForm
 from werkzeug.security import generate_password_hash,\
                                 check_password_hash
 import math
@@ -27,7 +26,7 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
     # LANDING GETS 4 REVIEWS THAT HAVE THE MOST UPVOTES
-    four_reviews = mongo.db.reviews.find().sort([('upvote', DESCENDING)]).limit(4)
+    four_reviews = mongo.db.reviews.find().sort([('rating', DESCENDING)]).limit(4)
     return render_template('index.html',  title='Home', reviews=four_reviews)
 
 
