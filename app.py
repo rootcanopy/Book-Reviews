@@ -99,7 +99,7 @@ def my_account():
         search_user = mongo.db.users.find_one({'username': current_user})
         # USERS REVIEW HISTORY
         reviews = mongo.db.reviews.find_one({'username': current_user})
-        loop = mongo.db.reviews.count_documents({'username': current_user})  # TODO
+        loop = mongo.db.reviews.count_documents({'username': current_user})
     return render_template('my_account.html', title='My Account',
                             loop=loop, users=search_user,
                             reviews=reviews)
@@ -140,14 +140,15 @@ def add_review():
         flash('You have a reviewed a book', 'success')
         # SENDS TO REVIEWS UPON SUCCESS
         return redirect(url_for('my_reviews'))
-    return render_template('add_review.html', title='Add Review', form=form)
+    return render_template('add_review.html', title='Add Review',
+                                                form=form)
 
 
 # FUNCTION TO EDIT REVIEW
 @app.route('/edit_review/<id>', methods=['GET', 'POST'])
 def edit_review(id):
-    one_rev = mongo.db.reviews.find_one({'_id': ObjectId(id)})
-    form = ReviewForm(data=one_rev)
+    db_review = mongo.db.reviews.find_one({'_id': ObjectId(id)})
+    form = ReviewForm(data=db_review)
     if form.validate_on_submit():
         reviews = mongo.db.reviews
         # THE DOCUMENT MODEL
@@ -157,11 +158,11 @@ def edit_review(id):
             'summary': request.form['summary'],
             'review': request.form['review'],
             'image': request.form['image'],
-            'rating': 0
+            'ratings': request.form['ratings']
             }})
         flash('Updated', 'success')
-    return render_template('edit_review.html', form=form,
-                            title='Edit Review')
+    return render_template('edit_review.html', form=form, 
+                           db_review=db_review, title='Edit Review')
 
 
 # ROUTE FOR REVIEW PAGE
@@ -178,8 +179,8 @@ def reviews(id):
 def delete_review(id):
     # LETS LOGGED IN DELETE THEIR REVIEW
     # GETS THE REVIEW
-    one_rev = mongo.db.reviews.find_one({'_id': ObjectId(id)})
-    if one_rev['username'] == session['username']:
+    db_review = mongo.db.reviews.find_one({'_id': ObjectId(id)})
+    if db_review['username'] == session['username']:
         flash('You have deleted your review', 'success')
     mongo.db.reviews.delete_one({'_id': ObjectId(id)})
     return redirect(url_for('index'))
