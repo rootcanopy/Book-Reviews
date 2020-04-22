@@ -154,10 +154,10 @@ def my_reviews():
         flash('This is your reviews page', 'success')
 
         current_user = session['username']
-        
-        reviews = mongo.db.reviews.find({'username': current_user})
+
+        review = mongo.db.reviews.find({'username': current_user})
     
-    return render_template('my_reviews.html', title='My Reviews', reviews=reviews)
+    return render_template('my_reviews.html', title='My Reviews', review=review)
 
 '''
 #USER TO WRITE REVIEW
