@@ -132,7 +132,6 @@ def add_review():
             'title': request.form['title'],
             'summary': request.form['summary'],
             'review': request.form['review'],
-            'upvote': 0,
             'username': session['username']
         })
         flash('You have a reviewed a book', 'success')
@@ -154,9 +153,10 @@ def edit_review(id):
             'title': request.form['title'],
             'summary': request.form['summary'],
             'review': request.form['review'],
-            'image': request.form['image_file']
+            'image': request.form['image_file'],
+            'vote': 0
             }})
-        flash('Update', 'success')
+        flash('Updated', 'success')
     return render_template('edit_review.html', form=form,
                             title='Edit Review')
 
