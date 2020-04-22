@@ -2,58 +2,43 @@
 
 {% block content %}
 
-<div class="card mb-5" style="width: 14rem;">
-        
-    <div class="row">
-        {% for review in reviews %}
-            <div class="col-lg-3 col-md-6 mb-5">
-                <img class="card-img-top" src="{{ review.image }}" alt="Cover Image">
+<div class="row">
+{% for review in reviews %}
+    <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top bottom-border" src="{{ review.image }}" alt="Cover Image">
+            
+            <div class="card-body">
                 <!-- BOOK AUTHOR -->
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 mb-5"><span class="book-title">
-                            <strong>Author:</strong></span>
-                            <span class="text-capitalize">{{ review.author }}</span>
-                        </div>
-                    <!-- BOOK TITLE-->
-                        <div class="col-lg-3 col-md-6 mb-5"><span class="book-title">
-                            <strong>Title:</strong></span>
-                            <span class="text-capitalize">{{ review.title }}</span>
-                        </div>
-                    </div>
-
-                    <hr />
-                    <!-- BOOK SUMMARY -->
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 mb-5"><span class="book-title text-capitalize">
-                            <strong>Summary:</strong></span>
-                            <span class="">{{ review.summary }}</span>
-                        </div> 
-                    </div>
-
-                    <hr />
-                    <!-- THE REVIEWER -->
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 mb-5"><span class="book-title text-capitalize">
-                            <strong>Reviewed By:</strong></span>
-                            <strong><i class="fa fa-user-circle" aria-hidden="true"></i></strong>
-                            <span> {{ review.username }}</span>
-                        </div>
-                    </div>
-                    <hr />
-                    <!-- FULL REVIEW -->
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 mb-5"><a class="btn btn-primary"
-                                href="#TODO" >Full Review</a>
-                        </div>
-                        <div class="col-md-2"><span class="book-title">Upvotes:</span>
-                            <span class="upvote"><i class="fas fa-thumbs-up"></i> # </span>
-                        </div>
-                    </div>
-                </div>
+                <span class="book-title">
+                    <strong>Author:</strong></span>
+                <span class="text-capitalize">{{ review.author }}<br>
+                </span>
+                <!-- BOOK TITLE-->
+                <span class="book-title">
+                    <strong>Title:</strong></span>
+                <span class="text-capitalize">{{ review.title }}
+                </span>
+                <hr />
+                <!-- BOOK SUMMARY -->
+                <span class="book-title text-capitalize">
+                    <strong>Summary:</strong></span>
+                <span class="text-capitalize">{{ review.summary }}</span>
+                <hr />
+                <!-- THE REVIEWER -->
+                <span class="book-title text-capitalize">
+                    <strong>Reviewed By:</strong></span>
+                <strong><i class="fa fa-user-circle" aria-hidden="true"></i></strong>
+                <span> {{ review.username }}</span>
+                <hr />
+                <!-- FULL REVIEW -->
+                <a class="btn btn-primary" href="{{ url_for('reviews', id=review._id) }}">Full Review</a>
+                <span class="book-title upvote">Upvotes:</span>
+                <span class="upvote"><i class="fa fa-thumbs-up"></i></span>
             </div>
-        {% endfor %}    
         </div>
+    </div>
+{% endfor %}
 </div>
 
 {% endblock %}
