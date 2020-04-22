@@ -10,9 +10,9 @@ body {
 .jumbotron {
     background-image: url('./images/cute.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
-    /*max-width:100vw;*/
-    height:auto;
+    /*background-size: cover;*/
+    max-width:100vw;
+    height:50vh;
     color: black;
     font-weight: bold;
     margin:0;

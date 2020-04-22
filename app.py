@@ -88,7 +88,7 @@ def login():
                 session['username'] = request.form['username']
                 session['logged_in'] = True
                 #IF SUCCESS REDIRECT TO HOME
-                return redirect(url_for('home', title='Log In', form=form))
+                return redirect(url_for('index', title='Home', form=form))
             #IF FAILS
             flash('Invalid username/password combination')
     return render_template('login.html', title='Log In', form=form)
@@ -167,7 +167,7 @@ def logout():
     #SIGNS USER OUT AND CLEARS SESSION
     session.clear()
     flash('You have logged out', 'success')
-    return render_template('index.html', title='Home')
+    return render_template('index', title='Home')
 
 # APP RUN 
 if __name__ == '__main__':

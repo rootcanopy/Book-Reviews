@@ -82,6 +82,8 @@ The registration page and logic are tested. I tested for mismatched passwords, d
 
 The index page and reviews page is tested so that they load correctly. Some of my routes, reviews/ and my_account seem abit glitchy, sometimes they are speedy loading and other times they throw 404 errors.
 
+@screen size 320px the jumbotron gets a little funky, but I guess thats the average screen size, not below.
+
 
 ## **Deployment**
 
