@@ -10,7 +10,7 @@
                 <div class="jumbotron">
                     <div class="container">
                         <!-- JUMBO TEXT -->
-                        <h2 class="jumbo-awesome mt-5 mx-auto">AwesomeReads</h2>
+                        <h2 class="jumbo-awesome mt-1 mx-auto">AwesomeReads</h2>
                         <p class="lead">
                             <strong>Tell us about your AwesomeReads!<br>
                                 Give reviews a like!<br>
@@ -30,12 +30,12 @@
 
 <div class="row">
 {% for review in reviews %}
-    <div class="col-lg-6 col-md-6 mt-5 mx-auto">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{ review.image }}" alt="Cover Image">
-            <!-- BOOK AUTHOR -->
-
+    <div class="col-lg-6 col-md-4 mt-5 mx-auto">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top bottom-border" src="{{ review.image }}" alt="Cover Image">
+            
             <div class="card-body">
+                <!-- BOOK AUTHOR -->
                 <span class="book-title">
                     <strong>Author:</strong></span>
                 <span class="text-capitalize">{{ review.author }}

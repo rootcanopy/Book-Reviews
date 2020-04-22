@@ -17,12 +17,16 @@ body {
     height:50vh;
     color: black;
     font-weight: bold;
-    margin:0;
 }
 
 /* BOOK CARDS */
 .jumbo-awesome{
     color:#fafafa;
+}
+
+.bottom-boder{
+    border-color:black;
+    border-width: 3px;
 }
 .lead {
     font-size: 1.5rem;
@@ -33,7 +37,14 @@ body {
 }
 
 .card {
-    
+    border-style: solid;
+    border-width:2px;
+    border-color: black;
+    margin: auto
+}
+
+hr {
+    color: black;
 }
 
 .searchbutton{
