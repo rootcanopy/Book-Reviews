@@ -22,3 +22,4 @@ class ReviewForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     summary = TextAreaField('Summary',validators=[DataRequired()])
     review = TextAreaField('Review',validators=[DataRequired()])
+    add_review = SubmitField('Add Review')

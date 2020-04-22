@@ -147,6 +147,17 @@ def add_review():
 
 
 
+#THE LOGGED IN USERS REVIEWS
+@app.route('/my_reviews')
+def my_reviews():
+    if 'logged_in' in session:
+        flash('This is your reviews page', 'success')
+
+        current_user = session['username']
+        
+        reviews = mongo.db.reviews.find({'username': current_user})
+    
+    return render_template('my_reviews.html', title='My Reviews', reviews=reviews)
 
 '''
 #USER TO WRITE REVIEW
