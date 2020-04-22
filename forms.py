@@ -17,4 +17,8 @@ class RegistrationForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Register')
 
-
+class ReviewForm(FlaskForm):
+    author = StringField('Author', validators=[DataRequired()])          
+    title = StringField('Title', validators=[DataRequired()])
+    summary = TextAreaField('Summary',validators=[DataRequired()])
+    review = TextAreaField('Review',validators=[DataRequired()])

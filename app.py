@@ -3,7 +3,7 @@ import env
 from flask import Flask, render_template, redirect, url_for, flash, request, session
 from flask_pymongo import pymongo, PyMongo, DESCENDING
 from bson.objectid import ObjectId
-from forms import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm, ReviewForm
 from werkzeug.security import generate_password_hash, check_password_hash
 import math
 import re
@@ -77,7 +77,7 @@ def login():
 
     if form.validate_on_submit():
 
-        # if log in form passes all validation check if username  exists
+        #IF LOG IN FORM PASSES VALIDATION
         users = mongo.db.users
         existing_user = users.find_one({'username': request.form['username']})
         
@@ -105,16 +105,8 @@ def my_account():
 
         reviews = mongo.db.reviews.find({'username': current_user})
         loop = mongo.db.reviews.count_documents({'username': current_user})
-    return render_template('my_account.html', title='My Account',reviews=reviews, loop=loop, users=search_user)
+    return render_template('my_account.html', title='My Account', reviews=reviews, loop=loop, users=search_user)
 
-"""
-@app.route('/add_review')
-def add_review():
-    user = mongo.db.reviews
-    create_review = {'author': 'jack', 'title': 'My Toe', 'summary': 'how i stopped jamming'}
-    add_review = mongo.db.reviews.insert_one(create_review)
-    return 'review_added'
-"""
 
 #TO REMOVE/DELETE ACCOUNT
 @app.route('/delete_account/<id>', methods=['GET', 'POST'])
@@ -131,6 +123,39 @@ def delete_account(id):
     flash('Your account has been removed', 'success')
     return redirect(url_for('index'))
 
+
+#ROUTE FORM ADD REVIEW
+@app.route('/add_review', methods=['GET', 'POST'])
+def add_review():
+    form = ReviewForm()
+    if form.validate_on_submit():
+        reviews = mongo.db.reviews
+        #ADD A RECORD
+        reviews.insert_one({ 
+            'author': request.form['author'],
+            'title': request.form['title'],
+            'summary': request.form['summary'],
+            'review': request.form['review'],
+            'upvote': 0,
+            'username': session['username']
+        })
+        flash('You have a reviewed a book', 'success')
+        #SENDS TO REVIEWS UPON SUCCESS
+        return redirect(url_for('my_reviews'))
+
+    return render_template('add_review.html', title='Add Review', form=form)
+
+
+
+
+'''
+#USER TO WRITE REVIEW
+@app.route('/review/<id>', methods=['GET', 'POST'])
+def review(id):
+
+    return render_template('review.html', review=one_review,
+                           title=title, formatted_review=formatted_review)
+'''
 
 if __name__ == '__main__':
             app.run(host=os.environ.get('IP'),
