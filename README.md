@@ -107,6 +107,8 @@ The index page and reviews page is tested so that they load correctly. Some of m
 
 @screen size 320px the jumbotron gets a little funky, but I guess thats the average screen size, not below.
 
+Instead of editing a review and then it updating the database its creating a new record. Other than that everything is functioning well. The footer also is covering the end content atm will fix it once I get Heroku up and running.
+
 
 ## **Deployment**
 

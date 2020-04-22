@@ -33,8 +33,8 @@
                 <!-- THE REVIEWER -->
                 <span class="book-title text-capitalize">
                     <strong>Reviewed By:</strong></span>
-                <strong><i class="fa fa-user-circle" aria-hidden="true"></i></strong>
-                <span> {{ review.username }}</span>
+                        <strong><i class="fa fa-user-circle" aria-hidden="true"></i></strong>
+                    <span> {{ review.username }}</span>
                 <hr />
                 <!-- RATINGS -->
                 <span class="book-title text-capitalize">
@@ -48,9 +48,7 @@
                             class="btn btn-info" title="Edit Review">Edit Review</a>
                         </div>
                         <div class="col-12 col-md-6 mb-2">
-                            <button type="button" class="btn btn-danger" title="Delete Review">
-                                Delete Review
-                            </button>
+                            <a href="{{ (url_for('delete_review', id=review._id)) }}"class="btn btn-danger" title="Delete Review">Delete Review></a>
                         </div>
                     </div>
                 {% endif %}

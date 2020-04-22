@@ -98,11 +98,11 @@ def my_account():
         # GETTING USER DETAILS FOR ACCOUNT
         search_user = mongo.db.users.find_one({'username': current_user})
         # USERS REVIEW HISTORY
-        reviews = mongo.db.reviews.find_one({'username': current_user})
-        loop = mongo.db.reviews.count_documents({'username': current_user})
+        review = mongo.db.reviews.find_one({'username': current_user})
+        # loop = mongo.db.reviews.count_documents({'username': current_user})
     return render_template('my_account.html', title='My Account',
-                            loop=loop, users=search_user,
-                            reviews=reviews)
+                             users=search_user,    # loop=loop,
+                            review=review)
 
 
 # TO REMOVE/DELETE ACCOUNT
@@ -183,7 +183,7 @@ def delete_review(id):
     db_review = mongo.db.reviews.find_one({'_id': ObjectId(id)})
     if db_review['username'] == session['username']:
         flash('You have deleted your review', 'success')
-    mongo.db.reviews.delete_one({'_id': ObjectId(id)})
+        mongo.db.reviews.delete_one({'_id': ObjectId(id)})
     return redirect(url_for('index'))
 
 

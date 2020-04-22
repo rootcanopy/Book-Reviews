@@ -7,23 +7,22 @@
             <!-- USER IMAGE-->
             <img class="user_profile" src="{{ url_for('static', filename='images/default2.jpeg') }}" alt="profile image default" style="width:100%">
             <h2 class="user_name">User: {{ users.username }}</h2>
-            <!-- USERS REVIEWS -->
-            {% if loop == 0 %}
-                <p class="loop_return">You have 0 reviews</p>
-            {% endif %}
+            
 
             <!-- IF THE USER HAS REVIEWS -->
             {% for review in reviews %}
-                <div class="user_reviews">{{ reviews.title }} by {{ reviews.author }} 
-                    <a class="btn btn-info" target="_blank" href=" {{ url_for('my_reviews', id=review._id ) }} ">View Review</a>
+                <div class="user_reviews">{{ review.title }} by {{ review.author }} 
+                    <a class="btn btn-info" target="_blank" href="{{ url_for('my_reviews', id=review._id ) }}">View Review</a>
                 </div>
             {% endfor %}
                 
             <!-- ADD REVIEW -->
-            <div class="add_review"><a href="{{ (url_for('add_review', id=users._id )) }}" class="btn btn-info">Add Review</a>
+            <div class="add_review"><a href="{{ (url_for('add_review', id=users._id )) }}"
+                class="btn btn-info">Add Review</a>
             </div>
             <!-- TO REMOVE ACCOUNT -->
-            <div class="remove_accnt"><a href="{{ (url_for('delete_account', id=users._id )) }}" class="btn btn-danger">Delete Profile</a>
+            <div class="remove_accnt"><a href="{{ (url_for('delete_account', id=users._id )) }}"
+                class="btn btn-danger">Delete Profile</a>
             </div>
     </div>
 </div>
