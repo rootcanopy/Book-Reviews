@@ -2,8 +2,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField,\
                     SubmitField, TextAreaField, IntegerField
 from wtforms.validators import DataRequired, Length, \
-                            EqualTo, Email
+                            EqualTo, Email, url
 from flask_wtf.file import FileField, FileAllowed
+from flask_wtf.html5 import URLField
 
 
 class LoginForm(FlaskForm):
@@ -25,7 +26,7 @@ class ReviewForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     summary = TextAreaField('Summary',validators=[DataRequired()])
     review = TextAreaField('Review',validators=[DataRequired()])
-    image = FileField('Image Only')
+    image = URLField('Image Url Only')
     ratings = IntegerField('Rating', validators=[DataRequired()])
     add_review = SubmitField('Add Review')
     edit_review = SubmitField('Edit Review')

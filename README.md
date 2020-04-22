@@ -5,13 +5,21 @@ finding new books and Authors, reading other peoples reviews, reading qoutes fro
 
 ## *UX*
 
-The Website is fully responsive and is designed to be easy to navigate with little distraction. The item in navbar change if the user is logged in, limiting the content to a logged out user.Logged in users are able to Create, update (edit) and delete their own reviews. A user can also log out. A user can feel, relatively, at ease with a secure account. Mongo DB holds users information and reviews. The user is able to register and login and view other reviews.
+The Website is fully responsive and is designed to be easy to navigate with little distraction. The items in the navbar change if the user is logged in, limiting the content to an annonymous user. Logged in users are able to Create, update (edit) and delete their own reviews. A user can also log out. A user can feel, relatively, at ease with a secure account. Mongo DB holds users information and reviews. The user is able to register and login and view other reviews.
 
 Each review on the home page can be clicked onto and that will load the single review page which shows the entire entry. If the user created the review on their page they will be able to edit and delete the review, and also delete their profile when they need to.
 
 The add review allows the logged in user to create a review and enter it onto the database.
 
-## *Project Goals*  
+## *Project Goals*
+
+**User Goals**
+
+1. To view other users review
+2. To create an account on the site
+3. To add a review of their own and edit any existing ones they have
+4. To remove their reviews and account if they wish
+5. To be able to add an image alongside their review
 
 The overall goal of the project was to allow users to review books and create/upload/update their own book reviews viewable.
 As an avid reader I liked the idea of a social book hang out. Like club. But thats beyond the scope of this project for now.
@@ -20,28 +28,7 @@ The idea was and stll is a place for good books with a summary and reviews by ot
 The wireframes can be found in the Docs folder in Static, I didnt chance loading them out here because they may be oversized.
 The project, like always, changed along the way but still turned out more or less like the idea in mind.
 
-[Wireframes for project](/static/Docs)
-
-### *Future Implementations
-
-As stressful as these 2 weeks have been and how rushed the finished app is, as I type this I still really enjoyed the process. In the future version of this app it will be a 'Book Chat' app, that was the original plan along with GoodReads and sockets.. where users can continue uploading books and reviewing others collections, but also with instant chat using socket.io, and absolutely with an API such as GoodReads or the OpenLibrary to add more zest to the conversation and discovery.
-
-The user profile I would have liked to have spent more time on, It was fun making it basic. I still feel like this app is very incomplete and maybebuggy so I do definitely do see it as pet project upon finishing the course with CI.
-
-## *Features*
-
-1. Register and Login - Flask_session 
-2. Profile dedicated to the user with their own reviews
-3. Image upload
-4. More error handling and @login_required to make profiles and data more secure
-5. Easy colors, easy on the eyes
-6. Create, Read, Update, Delete functionality
-
-## *DataBase*
-
-
-
-## *User Stories*
+ **User Stories**
 
 > As a user I want to be able to create a review 
 >
@@ -65,25 +52,91 @@ The user profile I would have liked to have spent more time on, It was fun makin
 >
 > As a user I want to be able to delete my profile
 
+[Wireframes for project](/static/Docs)
+
+### *Future Implementations
+
+As stressful as these 2 weeks have been and how rushed the finished app is, as I type this I still really enjoyed the process. In the future version of this app it will be a 'Book Chat' app, that was the original plan along with GoodReads and sockets.. where users can continue uploading books and reviewing others collections, but also with instant chat using socket.io, and absolutely with an API such as GoodReads or the OpenLibrary to add more zest to the conversation and discovery.
+
+The user profile I would have liked to have spent more time on, It was fun making it basic. I still feel like this app is very incomplete and maybebuggy so I do definitely do see it as pet project upon finishing the course with CI.
+
+## *Features*
+
+1. Register and Login - Flask_session
+2. Users came create unique usernames and log in/ out
+3. Profile dedicated to the user with their own reviews
+4. Image upload
+5. More error handling and @login_required to make profiles and data more secure
+6. Easy colors, easy on the eyes
+7. Create, Read, Update, Delete functionality
+8. Ability to upload a URL image for the review
+
+
+## *DataBase*
+
+MongoDB Atlas is used as my database backend for storing user and review details. There are 2 colllections, 'users' and 'reviews', 'user' holds the session details - username and password, 'reviews' holds the full book review details. As MongoDB is a non relational db model I both collections share the username an unique identifier that ties records in both collections together.
+
+User Collection
+
+{
+"_id":"",
+"username":"",
+"password":""
+}
+
+Reviews Collection
+
+{
+"_id":"",
+"author":"",
+"title":" ",
+"summary":".",
+"review":""
+"image":"",
+"rating":"",
+"username":""
+}
+
 
 ## *Technolgoies Used*
 
-Flask
-Flask Sessions
-werkzeug.security
-My Linux terminal, this time I only used the terminal to manage my project tree.
-MongoDB
-MONGODB GUI
-Bootstrap
-Virtualenv
-GitHub
-StackOverflow
-YouTube
-VsCode <3
-DevTools - especially the responsive clicker.
-& ATOM
+
+This project utilizes Python, Flask, MongoDB, HTML, CSS and JavaScript technologies.
+
+- The project uses Python 3 to create the app, create the routes, create the functions within those routes and handles all back end interactions.
+
+- The project uses Flask framework to create and populate the templates.
+
+- MongoDB Atlas The project uses MongoDB Atlas as a backend database.
+
+- Bootstrap 4 The project uses Bootstrap to simplify the structure of the website and make the website responsive easily.
+
+- HTML 5 and CSS3 The project uses HTML5 and CSS3 for website structure and design.
+
+- Google Fonts The project used the Google 'Roboto' font across the site
+
+- GitHub This project uses GitHub to remotely store the source code in a repository. The project can be cloned or downloaded from here. See Deployment section
+
+- I used VSCode on my machine to build the project 
+
+- My Linux terminal, this time I only used the terminal to manage my project tree.
+
+Others to mention
+
+- Flask Sessions for simplicity in creating a profile
+- werkzeug.security to encrypt the user passwords
+- MONGODB GUI
+- Virtualenv
+- StackOverflow - to get insight into different things within the project build
+- DevTools - especially the responsive clicker.
+- & ATOM; I also use Atom from time to time and used it to help debug my system
 
 ## *Testing* 
+
+Most of my testing was in the debugger within Chrome, from time to time I used the breakpoints in the DevTools
+
+This was just a quick list I made while building, if anything came up I'd pop it in.
+
 
 First test after setting up I didnt connect to MONGO - square brackets instead of round on MONGO_URI
 
@@ -114,18 +167,20 @@ Instead of editing a review and then it updating the database its creating a new
 
 
 
+
 ## **Media & Resources**
 
 Goodreads was what I was aiming for, maybe someday :) I really enjoy their site and app.
 
+Flask Documentation
+
+Wtforms Documentation
+
 This was Inspiring
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
 
-###This dude - who had the project before me,
-I referred to his code abit, when I was unsure what way to do things.
-I should've referenced the code but I never kept track of it, both projects are similiar.
 His code is so well done it was good inspiration
-http://book-bites.herokuapp.com/addreview
+http://book-bites.herokuapp.com/
 
 Google images for the Jumbotron Image, I'm pretty sure it was pexel bay.
 
@@ -138,13 +193,15 @@ https://www.fullstackpython.com/flask.html
 There was some virtualenv tutorials I used from here
 https://realpython.com/
 
+StackOverflow of course
+
 ## **Acknowledgements**
 
 Kevin and Xavier for always lending some time & advice
 
 My Mentor
 
-The Dude with the similiar project - Ali Magee, my hat goes off to him,
+Ali Magee, my hats off to him
 
 Migue Grinberg - I even bought the MiniBlog course after discovering his work, after buying his book, Flask - Python for WebDevelopment
 
@@ -152,7 +209,9 @@ Corey Schaffer for his walkthroughs on Wtf-Forms and a better understanding of F
 
 Reddit - for the humour that was needed during these 2 weeks.
 
+Spotify
+
 
 ## **Future Notes**
 
-I feel this didnt go as well as I would have liked or needed in this part of the course. But like my last project it will, or another one will be going for resubmission. I messed it up myself by trying to use other packages alongside what we had learned, instead of just keeping it simple with the Database. 
+Make a plan and stick to it. Dont get distracted by packages and articles.

@@ -4,9 +4,9 @@
 
 <div class="row">
 {% for review in reviews %}
-    <div class="col-12 mb-4">
+    <div class="col-12 mt-0 mb-5">
         <div class="card">
-            <img class="card-img-top bottom-border" src="{{ review.image }}" alt="Cover Image">
+            <img class="card-img-top bottom-border review_img" src="{{ review.image }}" alt="Cover Image">
             
             <div class="card-body">
                 <!-- BOOK AUTHOR -->
@@ -14,6 +14,7 @@
                     <strong>Author:</strong></span>
                 <span class="text-capitalize">{{ review.author }}<br>
                 </span>
+                <hr />
                 <!-- BOOK TITLE-->
                 <span class="book-title">
                     <strong>Title:</strong></span>
@@ -30,11 +31,12 @@
                     <strong>Reviewed By:</strong></span>
                 <strong><i class="fa fa-user-circle" aria-hidden="true"></i></strong>
                 <span> {{ review.username }}</span>
+                <!-- RATINGS ON THE SAME ROW-->
+                <span class="book-title upvote">Ratings:</span>
+                <span class="Rating">{{ review.ratings }}<i class="fa fa-star-half-alt"></i></span>
                 <hr />
                 <!-- FULL REVIEW -->
                 <a class="btn btn-primary" href="{{ url_for('reviews', id=review._id) }}">Full Review</a>
-                <span class="book-title upvote">Ratings:</span>
-                <span class="Rating">{{ review.ratings }}<i class="fa fa-star-half-alt"></i></span>
             </div>
         </div>
     </div>
