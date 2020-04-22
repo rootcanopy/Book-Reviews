@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<div class="content-section">
+    <div class="card-header reviewer"><span class="review-title"><strong>Add Review</strong></span></div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <!-- REUSING THE LOGIN AND REGISTER FORM -->
+                <form method="POST" action="/add_review">
+                    <!-- TOKEN FOR CRSF -->
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Add Review</legend>
+                        <!-- SECTION FOR AUTHOR -->
+                        <div class="form-group">
+                            {{ form.author.label(class="form-control-label") }}
+                        <!-- AUTHOR ERROR -->
+                            {% if form.author.errors %}
+                            {{ form.author(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.author.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                        </div>
+                            {% else %}
+                            {{ form.author(class="form-control form-control") }}
+                            {% endif %}
+                        </div>                  
+                        <!-- SECTION FOR TITLE -->
+                        <div class="form-group">
+                            {{ form.title.label(class="form-control-label") }}
+                        <!-- SECTION FOR TITLE ERROR -->
+                            {% if form.title.errors %}
+                            {{ form.title(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.title.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                        </div>
+                            {% else %}
+                            {{ form.title(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        <!-- SECTION FOR SUMMARY -->
+                        <div class="form-group">
+                            {{ form.summary.label(class="form-control-label") }}
+                        <!-- SECTION FOR SUMMARY ERROR -->
+                            {% if form.summary.errors %}
+                            {{ form.summary(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.summary.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.summary(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        <!-- SECTION FOR REVIEW -->
+                        <div class="form-group">
+                            {{ form.review.label(class="form-control-label") }}
+                        <!-- SECTION FOR REVIEW ERROR -->
+                            {% if form.review.errors %}
+                            {{ form.review(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.review.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.review(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+
+                    </fieldset><!-- SUBMIT REVIEW -->
+                    <div class="form-group">
+                        {{ form.submit_add(class="btn btn-info") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
