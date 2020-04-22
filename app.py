@@ -25,9 +25,8 @@ mongo = PyMongo(app)
 @app.route('/index')
 def index():
     # LANDING GETS 4 REVIEWS THAT HAVE THE MOST UPVOTES
-    four_reviews = mongo.db.reviews.find().sort('upvote',\
-                            pymongo.DESCENDING).limit(4)
-    return render_template('index.html', title='Home', reviews=four_reviews)
+    four_reviews = mongo.db.reviews.find().sort([('upvote', DESCENDING)]).limit(4)
+    return render_template('index.html',  title='Home', reviews=four_reviews)
 
 
 # ROUTE FOR REGISTER
@@ -151,8 +150,9 @@ def my_reviews():
         current_user = session['username']
         # SEARCH DB FOR USERS REVIEWS
         reviews = mongo.db.reviews.find({'username': current_user})
-    return render_template('my_reviews.html', title='My Reviews',
-                reviews=reviews)
+    return render_template('my_reviews.html', reviews=reviews,
+                            title='My Reviews')
+
 
 
 # USER SIGN OUT
