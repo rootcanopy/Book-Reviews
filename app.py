@@ -141,6 +141,38 @@ def add_review():
     return render_template('add_review.html', title='Add Review', form=form)
 
 
+# FUNCTION TO EDIT REVIEW
+@app.route('/edit_review/<id>', methods=['GET', 'POST'])
+def edit_review(id):
+    one_rev = mongo.db.reviews.find_one({'_id': ObjectId(id)})
+    form = ReviewForm(data=one_rev)
+    if form.validate_on_submit():
+        reviews = mongo.db.reviews
+        # THE DOCUMENT MODEL
+        reviews.update_one({'_id': ObjectId(id)}, {'$set': {
+            'author': request.form['author'],
+            'title': request.form['title'],
+            'summary': request.form['summary'],
+            'review': request.form['review'],
+            'image': request.form['image_file']
+            }})
+        flash('Update', 'success')
+    return render_template('edit_review.html', form=form,
+                            title='Edit Review')
+
+
+# DELETE A RREVIEW
+@app.route('/delete/<id>', methods=['GET', 'POST'])
+def delete_review(id):
+    # LETS LOGGED IN DELETE THEIR REVIEW
+    # GETS THE REVIEW
+    one_rev = mongo.db.reviews.find_one({'_id': ObjectId(id)})
+    if one_rev['username'] == session['username']:
+        flash('You have deleted your review', 'success')
+    mongo.db.reviews.delete_one({'_id': ObjectId(id)})
+    return redirect(url_for('index'))
+
+
 # THE LOGGED IN USERS REVIEWS
 @app.route('/my_reviews', methods=['GET', 'POST'])
 def my_reviews():

@@ -146,7 +146,7 @@ Kevin and Xavier for always lending some time & advice
 
 My Mentor
 
-The Dude with the similiar project - Ali Magee, my hat goes off to him, he did a really good job of his own project ^^ link above ^^ I aspire to write code like that.  
+The Dude with the similiar project - Ali Magee, my hat goes off to him, he did a really good job of his own project ^^ link above ^^ I aspire to write code like that.
 
 Migue Grinberg - I even bought the MiniBlog course after discovering his work, after buying his book, Flask - Python for WebDevelopment
 

@@ -18,6 +18,17 @@ body {
     margin:0;
 }
 
+.jumbo-awesome{
+    color:#fafafa;
+}
+.lead {
+    font-size: 1.5rem;
+    font-weight:3px;
+    color: #fafafa;
+    bottom:0;
+
+}
+
 .card {
     height: 100%;
 }
