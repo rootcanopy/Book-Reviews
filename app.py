@@ -83,8 +83,8 @@ def my_account():
         search_user = mongo.db.users.find_one({'username': current_user})
 
         u_reviews = mongo.db.reviews.find({'username': current_user})
-
-    return render_template('my_account.html', title='My Account',u_reviews=u_reviews, users=search_user)
+        loop = mongo.db.reviews.count_documents({'username': current_user})
+    return render_template('my_account.html', title='My Account',u_reviews=u_reviews, loop=loop, users=search_user)
 
 """
 @app.route('/add_review')
@@ -95,6 +95,16 @@ def add_review():
     return 'review_added'
 """
 
+#TO REMOVE/DELETE ACCOUNT
+@app.route('/delete_account/<id>', methods=['GET', 'POST'])
+def delete_account(id):
+    users = session['username']
+    mongo.db.reviews.delete_many({'username': users})
+    mongo.db.users.delete_one({'_id': ObjectId(id)})
+    session.clear()
+
+    flash('Your account has been deleted', 'success')
+    return redirect(url_for('index',))
 
 
 if __name__ == '__main__':

@@ -2,6 +2,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    height: 100vh;
 }
 
 .jumbotron {
@@ -41,8 +43,14 @@ div.card.user{
     max-width: 480px;
     max-height: 780px;
     margin: auto;
+    margin-bottom: 20px;
 }
-img.user_profile {
-    
+
+div.remove_accnt.add_review {
+    margin:auto;
+}
+
+.user_name {
+    margin-top: 10px;
 }
 

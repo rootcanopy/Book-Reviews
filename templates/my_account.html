@@ -4,16 +4,22 @@
 
 <div class="container">
     <div class="card user">
-        <img class="user_profile" src="{{ url_for('static', filename='images/default2.jpeg') }}" alt="profile image default" style="width:100%">
-        <h2>User: {{ users.username }}</h2>
-        <!-- USERS REVIEWS -->
-        <p class="title"></p>
-        <p>Harvard University</p>
-        <a href="#"><i class="fa fa-dribbble"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <p><button>Contact</button></p>
+            <!-- USER IMAGE-->
+            <img class="user_profile" src="{{ url_for('static', filename='images/default2.jpeg') }}" alt="profile image default" style="width:100%">
+            <h2 class="user_name">User: {{ users.username }}</h2>
+            <!-- USERS REVIEWS -->
+            {% if loop == 0 %}
+                <p class="loop_return">You haven't any reviews</p>
+            {% endif %}
+
+            <div class=""
+
+            
+            <!-- ADD REVIEW -->
+            <div class="add_review"><a href="{{ (url_for('delete_account', id=users._id )) }}" class="btn btn-info">Add Review</a></div>
+            <!-- TO REMOVE ACCOUNT -->
+            <div class="remove_accnt"><a href="{{ (url_for('delete_account', id=users._id )) }}" class="btn btn-danger">Delete Profile</a></div>
+        </div>
     </div>
 </div>
 
