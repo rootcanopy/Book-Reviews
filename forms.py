@@ -28,3 +28,4 @@ class ReviewForm(FlaskForm):
     image = FileField('Image Only')
     ratings = IntegerField('Rating', validators=[DataRequired()])
     add_review = SubmitField('Add Review')
+    edit_review = SubmitField('Edit Review')

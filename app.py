@@ -133,8 +133,8 @@ def add_review():
             'title': request.form['title'],
             'summary': request.form['summary'],
             'review': request.form['review'],
-            'image': request.form['photo'],
-            'ratiing': request.form['rating'],
+            'image': request.form['image'],
+            'ratings': request.form['ratings'],
             'username': session['username'],
         })
         flash('You have a reviewed a book', 'success')
@@ -147,6 +147,7 @@ def add_review():
 # FUNCTION TO EDIT REVIEW
 @app.route('/edit_review/<id>', methods=['GET', 'POST'])
 def edit_review(id):
+    # GETTING THE USERS REVIEW
     db_review = mongo.db.reviews.find_one({'_id': ObjectId(id)})
     form = ReviewForm(data=db_review)
     if form.validate_on_submit():
@@ -162,7 +163,7 @@ def edit_review(id):
             }})
         flash('Updated', 'success')
     return render_template('edit_review.html', form=form, 
-                           db_review=db_review, title='Edit Review')
+                        title='Edit Review')
 
 
 # ROUTE FOR REVIEW PAGE
