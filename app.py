@@ -10,10 +10,10 @@ import re
 
 
 app = Flask(__name__)
-# SECRET KEY FOR CSRF #TODO + DB + MONGOURI
-app.config['MONGO_DBNAME'] = 'book_review'
+# SECRET KEY FOR CSRF + DB + MONGOURI
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.config['SECRET_KEY'] = '8bf1555c499fe3cc55021fd1e87585e5'
+app.config['MONGO_DBNAME'] = 'book_review'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 
 mongo = PyMongo(app)
@@ -25,8 +25,7 @@ mongo = PyMongo(app)
 def index():
     # LANDING GETS 4 REVIEWS THAT HAVE THE MOST UPVOTES
     four_reviews = mongo.db.reviews.find().sort([('upvote', DESCENDING)]).limit(4)
-    
-    return render_template('index.html', title="Home", reviews=four_reviews)
+    return render_template('index.html', title='Home', reviews=four_reviews)
 
 
 #ROUTE FOR REGISTER
