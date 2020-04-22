@@ -119,13 +119,17 @@ def add_review():
 #TO REMOVE/DELETE ACCOUNT
 @app.route('/delete_account/<id>', methods=['GET', 'POST'])
 def delete_account(id):
+    #DETAILS FROM LOGGED IN
     users = session['username']
+    #REMOVING ALL BY USER
     mongo.db.reviews.delete_many({'username': users})
+    #REMOVING ACCOUNT
     mongo.db.users.delete_one({'_id': ObjectId(id)})
+    #SESSION POPPED
     session.clear()
 
-    flash('Your account has been deleted', 'success')
-    return redirect(url_for('index',))
+    flash('Your account has been removed', 'success')
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
