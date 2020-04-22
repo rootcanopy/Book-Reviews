@@ -165,7 +165,14 @@ Instead of editing a review and then it updating the database its creating a new
 
 ## **Deployment**
 
+I personally used vscode on my local machine to develop the site using Python 3.7.3 and deployed to Heroku via Github.
 
+1. To download or clone the site to your local machine you will need to go to my repo see steps in https://help.github.com/en/articles/cloning-a-repository .
+2. Before you download or clone the site you will need to ensure you have Python 3.7 installed.
+3. Once you have Python installed, created a virtual environment as appropriate to you chosen IDE and os.
+4. Run the requirements.txt file as appropriate to your IDE to install the relevant required packages dependencies for the project into your virtual environment.
+5. Run the app.py file as appropriate to your chosen environment and os.
+6. You should now be able to view the site on your localhost on port 5000.
 
 
 ## **Media & Resources**
