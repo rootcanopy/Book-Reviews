@@ -1,4 +1,4 @@
-# *Awesome-Reads* ![books](../images/book-clipart.png)
+# *Awesome-Reads* ![books](./static/images/book-clipart.png)
 
 This book review project is aimed at anyone who enjoys reading and talking about what they have read. Viewing & reviewing books, saving them in a library/list for future use,
 finding new books and Authors, reading other peoples reviews, reading qoutes from books they are interested in. I'm an avid reader and was pretty motivated 
