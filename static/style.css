@@ -36,3 +36,13 @@ body {
     color: black;
 }
 
+/* USER PROFILE */
+div.card.user{
+    max-width: 480px;
+    max-height: 780px;
+    margin: auto;
+}
+img.user_profile {
+    
+}
+

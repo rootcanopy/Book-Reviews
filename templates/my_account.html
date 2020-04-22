@@ -3,16 +3,17 @@
 {% block content %}
 
 <div class="container">
-    <div class="card">
-    <img src="img.jpg" alt="John" style="width:100%">
-    <h1>John Doe</h1>
-    <p class="title">CEO & Founder, Example</p>
-    <p>Harvard University</p>
-    <a href="#"><i class="fa fa-dribbble"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <p><button>Contact</button></p>
+    <div class="card user">
+        <img class="user_profile" src="{{ url_for('static', filename='images/default2.jpeg') }}" alt="profile image default" style="width:100%">
+        <h2>User: {{ users.username }}</h2>
+        <!-- USERS REVIEWS -->
+        <p class="title"></p>
+        <p>Harvard University</p>
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <p><button>Contact</button></p>
     </div>
 </div>
 

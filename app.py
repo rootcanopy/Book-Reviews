@@ -73,11 +73,18 @@ def login():
     return render_template('login.html', title='Log In', form=form)
 
 
-@app.route('/my_account')
+@app.route('/my_account/')
 def my_account():
     #FOR USER ACCOUNT
-    if 
-    return render_template('my_account.html', title='My Account', users=users)
+    if 'logged_in' in session:
+        current_user = session['username']
+        flash('Hi "' + current_user + '". This is your profile, add or edit your reviews', 'success')
+
+        search_user = mongo.db.users.find_one({'username': current_user})
+
+        u_reviews = mongo.db.reviews.find({'username': current_user})
+
+    return render_template('my_account.html', title='My Account',u_reviews=u_reviews, users=search_user)
 
 """
 @app.route('/add_review')
