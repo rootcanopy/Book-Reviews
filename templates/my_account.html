@@ -14,16 +14,17 @@
 
             <!-- IF THE USER HAS REVIEWS -->
             {% for review in reviews %}
-                <div class="u_reviews">{{ reviews.title }} by {{ reviews.author }} 
-                    <a class="btn btn-info" target="_blank" href=" {{ url_for('reviews', id=review._id ) }} ">View Review</a>
+                <div class="user_reviews">{{ reviews.title }} by {{ reviews.author }} 
+                    <a class="btn btn-info" target="_blank" href=" {{ url_for('my_reviews', id=review._id ) }} ">View Review</a>
                 </div>
             {% endfor %}
                 
             <!-- ADD REVIEW -->
-            <div class="add_review"><a href="{{ (url_for('add_review', id=users._id )) }}" class="btn btn-info">Add Review</a></div>
+            <div class="add_review"><a href="{{ (url_for('add_review', id=users._id )) }}" class="btn btn-info">Add Review</a>
+            </div>
             <!-- TO REMOVE ACCOUNT -->
-            <div class="remove_accnt"><a href="{{ (url_for('delete_account', id=users._id )) }}" class="btn btn-danger">Delete Profile</a></div>
-        </div>
+            <div class="remove_accnt"><a href="{{ (url_for('delete_account', id=users._id )) }}" class="btn btn-danger">Delete Profile</a>
+            </div>
     </div>
 </div>
 

@@ -103,9 +103,10 @@ def my_account():
 
         search_user = mongo.db.users.find_one({'username': current_user})
 
-        reviews = mongo.db.reviews.find({'username': current_user})
+        reviews = mongo.db.reviews.find_one({'username': current_user})
         loop = mongo.db.reviews.count_documents({'username': current_user})
-    return render_template('my_account.html', title='My Account', reviews=reviews, loop=loop, users=search_user)
+
+    return render_template('my_account.html', title='My Account',  loop=loop, users=search_user, reviews=reviews)
 
 
 #TO REMOVE/DELETE ACCOUNT
@@ -148,7 +149,7 @@ def add_review():
 
 
 #THE LOGGED IN USERS REVIEWS
-@app.route('/my_reviews')
+@app.route('/my_reviews', methods=['GET', 'POST'])
 def my_reviews():
     if 'logged_in' in session:
         flash('This is your reviews page', 'success')
@@ -159,14 +160,6 @@ def my_reviews():
     
     return render_template('my_reviews.html', title='My Reviews', review=review)
 
-'''
-#USER TO WRITE REVIEW
-@app.route('/review/<id>', methods=['GET', 'POST'])
-def review(id):
-
-    return render_template('review.html', review=one_review,
-                           title=title, formatted_review=formatted_review)
-'''
 
 if __name__ == '__main__':
             app.run(host=os.environ.get('IP'),
