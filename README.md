@@ -121,6 +121,8 @@ This project utilizes Python, Flask, MongoDB, HTML, CSS and JavaScript technolog
 
 - My Linux terminal, this time I only used the terminal to manage my project tree.
 
+- Pencil for the wireframes
+
 Others to mention
 
 - Flask Sessions for simplicity in creating a profile
