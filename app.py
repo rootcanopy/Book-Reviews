@@ -160,6 +160,19 @@ def edit_review(id):
     return render_template('edit_review.html', form=form,
                             title='Edit Review')
 
+# ROUTE FOR REVIEW PAGE
+@app.route('/reviews/<id>', methods=['GET', 'POST'])
+def reviews(id):
+    # FUNCTION DISPLAYS DOC OF REVIEW IF ID
+    # RUNS WHEN CLICKED
+    one_rev = mongo.db.reviews.find_one({'_id': ObjectId(id)})
+    title = one_rev['title']
+    format_rev = one_rev['review']
+    # PASS LIST INTO TEMPLATE FOR LOOP
+    format_rev = re.split(r"[~\r\n]+", format_rev)
+    return render_template('reviews.html', review=one_rev,
+                            title=title, format_rev=format_rev)
+
 
 # DELETE A RREVIEW
 @app.route('/delete/<id>', methods=['GET', 'POST'])

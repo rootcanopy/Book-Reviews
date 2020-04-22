@@ -124,7 +124,7 @@ This was Inspiring
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
 
 ###This dude - who had the project before me,
-I referred to his code quite abit, when I was unsure what way to do things.
+I referred to his code abit, when I was unsure what way to do things.
 I should've referenced the code but I never kept track of it, both projects are similiar.
 His code is so well done it was good inspiration
 http://book-bites.herokuapp.com/addreview
@@ -146,7 +146,7 @@ Kevin and Xavier for always lending some time & advice
 
 My Mentor
 
-The Dude with the similiar project - Ali Magee, my hat goes off to him, he did a really good job of his own project ^^ link above ^^ I aspire to write code like that.
+The Dude with the similiar project - Ali Magee, my hat goes off to him,
 
 Migue Grinberg - I even bought the MiniBlog course after discovering his work, after buying his book, Flask - Python for WebDevelopment
 
