@@ -161,6 +161,15 @@ def my_reviews():
     return render_template('my_reviews.html', title='My Reviews', review=review)
 
 
+# USER SIGN OUT
+@app.route('/logout')
+def logout():
+    #SIGNS USER OUT AND CLEARS SESSION
+    session.clear()
+    flash('You have logged out', 'success')
+    return render_template('index', title='Home')
+
+# APP RUN 
 if __name__ == '__main__':
             app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

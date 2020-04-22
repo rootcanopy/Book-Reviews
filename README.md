@@ -91,7 +91,8 @@ The index page and reviews page is tested so that they load correctly. Some of m
 //This was Inspiring
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
 
-//This dude - who had the same thinking before me
+//This dude - who had the style project,
+I referred back here abit when I was unsure
 http://book-bites.herokuapp.com/addreview
 
 //Google images for the Jumbotron Image
@@ -107,11 +108,11 @@ https://realpython.com/
 
 ## **Acknowledgements**
 
-My Journal
-
 Kevin and Xavier for always lending some time & advice
 
-Marcus and Jon
+My Mentor
+
+The Dude with the similiar project
 
 Migue Grinberg - I even bought the MiniBlog course after discovering his work, after buying his book, Flask - Python for WebDevelopment
 
@@ -122,4 +123,4 @@ Reddit - for the humour that was needed during these 2 weeks.
 
 ## **Future Notes**
 
-I feel this didnt go as well as I would have liked or needed in this part of the course. But like my last project it will, or another one will be going for resubmission. I messed it up myself by trying to use Scrapy instead of just keeping it simple with the Database. 
+I feel this didnt go as well as I would have liked or needed in this part of the course. But like my last project it will, or another one will be going for resubmission. I messed it up myself by trying to use other packages alongside what we had learned, instead of just keeping it simple with the Database. 
