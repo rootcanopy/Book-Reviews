@@ -4,8 +4,10 @@ from flask import Flask, render_template, redirect, \
         url_for, flash, request, session
 from flask_pymongo import pymongo, PyMongo, DESCENDING
 from bson.objectid import ObjectId
-from forms import RegistrationForm, LoginForm, ReviewForm
-from werkzeug.security import generate_password_hash, check_password_hash
+from forms import RegistrationForm, LoginForm, ReviewForm,\
+                                FileField, FileAllowed
+from werkzeug.security import generate_password_hash,\
+                                check_password_hash
 import math
 import re
 
@@ -132,7 +134,9 @@ def add_review():
             'title': request.form['title'],
             'summary': request.form['summary'],
             'review': request.form['review'],
-            'username': session['username']
+            'image': request.form['photo'],
+            'ratiing': request.form['rating'],
+            'username': session['username'],
         })
         flash('You have a reviewed a book', 'success')
         # SENDS TO REVIEWS UPON SUCCESS
@@ -153,25 +157,21 @@ def edit_review(id):
             'title': request.form['title'],
             'summary': request.form['summary'],
             'review': request.form['review'],
-            'image': request.form['image_file'],
-            'vote': 0
+            'image': request.form['image'],
+            'rating': 0
             }})
         flash('Updated', 'success')
     return render_template('edit_review.html', form=form,
                             title='Edit Review')
 
+
 # ROUTE FOR REVIEW PAGE
 @app.route('/reviews/<id>', methods=['GET', 'POST'])
 def reviews(id):
-    # FUNCTION DISPLAYS DOC OF REVIEW IF ID
-    # RUNS WHEN CLICKED
-    one_rev = mongo.db.reviews.find_one({'_id': ObjectId(id)})
-    title = one_rev['title']
-    format_rev = one_rev['review']
-    # PASS LIST INTO TEMPLATE FOR LOOP
-    format_rev = re.split(r"[~\r\n]+", format_rev)
-    return render_template('reviews.html', review=one_rev,
-                            title=title, format_rev=format_rev)
+    # FUNCTION DISPLAYS DOC REVIEW IF ID
+    review = mongo.db.reviews.find_one({'_id': ObjectId(id)})
+    return render_template('reviews.html', review=review,
+                            title='Reviews')
 
 
 # DELETE A RREVIEW

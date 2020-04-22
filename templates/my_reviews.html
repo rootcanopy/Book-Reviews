@@ -4,8 +4,8 @@
 
 <div class="row">
 {% for review in reviews %}
-    <div class="col-lg-6 col-md-6 mb-4">
-        <div class="card" style="width: 20rem;">
+    <div class="col-12 mb-4">
+        <div class="card">
             <img class="card-img-top bottom-border" src="{{ review.image }}" alt="Cover Image">
             
             <div class="card-body">
@@ -33,8 +33,8 @@
                 <hr />
                 <!-- FULL REVIEW -->
                 <a class="btn btn-primary" href="{{ url_for('reviews', id=review._id) }}">Full Review</a>
-                <span class="book-title upvote">Upvotes:</span>
-                <span class="upvote"><i class="fa fa-thumbs-up"></i></span>
+                <span class="book-title upvote">Ratings:</span>
+                <span class="Rating">{{ review.ratings }}<i class="<i class="fas fa-star-half-alt"></i></span>
             </div>
         </div>
     </div>

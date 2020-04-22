@@ -5,9 +5,9 @@
     <!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
     
 <div class="row">
-    <div class="col-lg-6 col-md-6 mb-4">
-        <div class="card" style="width: 20rem;">
-            <img class="card-img-top bottom-border" src="{{ review.image }}" alt="Cover Image">
+    <div class="col-12 mb-5">
+        <div class="card">
+            <img class="card-img-top bottom-border review_img" src="{{ review.image }}" alt="Cover Image">
             
             <div class="card-body">
                 <!-- BOOK AUTHOR -->
@@ -39,7 +39,6 @@
                 <hr />
                 <!-- FULL REVIEW -->
                 <a class="btn btn-primary" href="{{ url_for('reviews', id=review._id) }}">Full Review</a>
-                
             </div>
         </div>
     </div>

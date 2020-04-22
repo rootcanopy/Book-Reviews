@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #edf2f7;
     overflow-x: hidden;
-    margin: 0;
+    margin: auto;
     min-width:340px;
 }
 
@@ -51,10 +51,8 @@ hr {
     margin-left:0
 }
 
-
-
-
 /* NAVBAR STYLES */
+
 .bg-dark{
     background-color: #8B5C57!important;
 }
@@ -99,3 +97,10 @@ div.remove_accnt.add_review {
     padding-bottom: 2.5rem;
 }
 
+.review_img {
+    max-width: 300px;
+    max-height: 400px;
+    margin:auto;
+}
+
+/*@media*/
