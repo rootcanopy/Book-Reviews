@@ -1,4 +1,4 @@
-# *Awesome-Reads* (../images/book-clipart.png)
+# *Awesome-Reads* ![books](../images/book-clipart.png)
 
 This book review project is aimed at anyone who enjoys reading and talking about what they have read. Viewing & reviewing books, saving them in a library/list for future use,
 finding new books and Authors, reading other peoples reviews, reading qoutes from books they are interested in. I'm an avid reader and was pretty motivated 
@@ -17,7 +17,7 @@ wireframes
 
 ## *User Stories*
 
-> As a user I want to be able to make a review 
+> As a user I want to be able to create a review 
 >
 > As a user I want to be able to view other peoples reviews
 >
@@ -31,11 +31,13 @@ wireframes
 >
 > As a user I want to be able to make a profile.
 >
-> As a user I want to be able to save my reviews to my profile
+> As a user I want to save my reviews to my profile.
 >
-> As a user I want to be able to view books reviewed by other people
+> As a user I want to be able to delete my review
 >
-> As a user I want to be able to save my review and others
+> As a user I want to be able to edit my review
+>
+> As a user I want to be able to delete my profile
 
 
 
