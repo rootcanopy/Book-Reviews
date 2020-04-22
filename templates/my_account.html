@@ -12,7 +12,14 @@
                 <p class="loop_return">You haven't any reviews</p>
             {% endif %}
 
-            <div class=""
+            <!-- IF THE USER HAS REVIEWS -->
+            {% for review in reviews %}
+                <div class="u_reviews">{{ reviews.title }} by {{ reviews.author }} 
+                    <a class="btn btn-info" target="_blank" href=" {{ url_for('reviews', id=review._id ) }} ">View Review</a>
+                </div>
+            {% endfor %}
+                
+
 
             
             <!-- ADD REVIEW -->

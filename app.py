@@ -68,8 +68,29 @@ def register():
 #ROUTE FOR LOGIN
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    #THE USER LOGIN FUNCTION
     form = LoginForm()
-    
+    # LOGIN HANDLER
+    if session.get('logged_in'):
+        if session['logged_in'] is True:
+            return redirect(url_for('home'))
+
+    if form.validate_on_submit():
+
+        # if log in form passes all validation check if username  exists
+        users = mongo.db.users
+        existing_user = users.find_one({'username': request.form['username']})
+        
+        if existing_user:  #IF USER IN DB
+            password = form.password.data
+            if check_password_hash(existing_user['password'], password):
+                # IF THE HASH FITS
+                session['username'] = request.form['username']
+                session['logged_in'] = True
+                #IF SUCCESS REDIRECT TO HOME
+                return redirect(url_for('home', title='Log In', form=form))
+            #IF FAILS
+            flash('Invalid username/password combination')
     return render_template('login.html', title='Log In', form=form)
 
 
@@ -82,9 +103,9 @@ def my_account():
 
         search_user = mongo.db.users.find_one({'username': current_user})
 
-        u_reviews = mongo.db.reviews.find({'username': current_user})
+        reviews = mongo.db.reviews.find({'username': current_user})
         loop = mongo.db.reviews.count_documents({'username': current_user})
-    return render_template('my_account.html', title='My Account',u_reviews=u_reviews, loop=loop, users=search_user)
+    return render_template('my_account.html', title='My Account',reviews=reviews, loop=loop, users=search_user)
 
 """
 @app.route('/add_review')
