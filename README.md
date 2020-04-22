@@ -5,15 +5,41 @@ finding new books and Authors, reading other peoples reviews, reading qoutes fro
 
 ## *UX*
 
-The Website is fully responsive and uses Mongo DB to hold users collection and a book reviews collection. The user is able to register and login and view reviews. Logged in users are able to Create, update (edit) and delete their own reviews. A user can also log out.
+The Website is fully responsive and is designed to be easy to navigate with little distraction. The item in navbar change if the user is logged in, limiting the content to a logged out user.Logged in users are able to Create, update (edit) and delete their own reviews. A user can also log out. A user can feel, relatively, at ease with a secure account. Mongo DB holds users information and reviews. The user is able to register and login and view other reviews.
 
-Each review on the home page can be clicked onto and that will load the single recipe page which shows the entire entry. If the user created the review on their page they will be able to edit and delete the review, and also profile when they need to.
+Each review on the home page can be clicked onto and that will load the single review page which shows the entire entry. If the user created the review on their page they will be able to edit and delete the review, and also delete their profile when they need to.
 
 The add review allows the logged in user to create a review and enter it onto the database.
 
-### *Project Goals*  
+## *Project Goals*  
 
-wireframes 
+The overall goal of the project was to allow users to review books and create/upload/update their own book reviews viewable.
+As an avid reader I liked the idea of a social book hang out. Like club. But thats beyond the scope of this project for now.
+The idea was and stll is a place for good books with a summary and reviews by others.
+
+The wireframes can be found in the Docs folder in Static, I didnt chance loading them out here because they may be oversized.
+The project, like always, changed along the way but still turned out more or less like the idea in mind.
+
+[Wireframes for project](/static/Docs)
+
+### *Future Implementations
+
+As stressful as these 2 weeks have been and how rushed the finished app is, as I type this I still really enjoyed the process. In the future version of this app it will be a 'Book Chat' app, that was the original plan along with GoodReads and sockets.. where users can continue uploading books and reviewing others collections, but also with instant chat using socket.io, and absolutely with an API such as GoodReads or the OpenLibrary to add more zest to the conversation and discovery.
+
+The user profile I would have liked to have spent more time on, It was fun making it basic. I still feel like this app is very incomplete and maybebuggy so I do definitely do see it as pet project upon finishing the course with CI.
+
+## *Features*
+
+1. Register and Login - Flask_session 
+
+2. Profile dedicated to the user with their own reviews
+
+3. 
+
+. More error handling and @login_required to make profiles and data more secure
+
+4. 
+
 
 ## *User Stories*
 
@@ -41,13 +67,6 @@ wireframes
 
 
 
-## *Features*
-
-1. Register and Login - I really enjoyed building the profile
-
-2. The add review form
-
-3. Features left to implement 
 
 
 
@@ -98,23 +117,27 @@ The index page and reviews page is tested so that they load correctly. Some of m
 
 
 ## **Media & Resources**
-//This was Inspiring
+
+Goodreads was what I was aiming for, maybe someday :) I really enjoy their site and app.
+
+This was Inspiring
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
 
-//This dude - who had the style project,
-I referred back here abit when I was unsure what way to do things.
-Ishould reference the code but i never kept track of it, both projects are similiar.
+###This dude - who had the project before me,
+I referred to his code quite abit, when I was unsure what way to do things.
+I should've referenced the code but I never kept track of it, both projects are similiar.
+His code is so well done it was good inspiration
 http://book-bites.herokuapp.com/addreview
 
-//Google images for the Jumbotron Image
+Google images for the Jumbotron Image, I'm pretty sure it was pexel bay.
 
-//Corey Schafer for the walkthrough on forms
+Corey Schafer for the walkthrough on forms
 https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH
 
-//Always dipping in and out of this site
+Always dipping in and out of this site
 https://www.fullstackpython.com/flask.html
 
-//There was some virtualenv tutorials I used from here
+There was some virtualenv tutorials I used from here
 https://realpython.com/
 
 ## **Acknowledgements**
@@ -123,7 +146,7 @@ Kevin and Xavier for always lending some time & advice
 
 My Mentor
 
-The Dude with the similiar project
+The Dude with the similiar project - Ali Magee, my hat goes off to him, he did a really good job of his own project ^^ link above ^^ I aspire to write code like that.  
 
 Migue Grinberg - I even bought the MiniBlog course after discovering his work, after buying his book, Flask - Python for WebDevelopment
 
