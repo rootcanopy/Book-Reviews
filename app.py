@@ -150,9 +150,8 @@ def my_reviews():
         current_user = session['username']
         # SEARCH DB FOR USERS REVIEWS
         reviews = mongo.db.reviews.find({'username': current_user})
-    return render_template('my_reviews.html', reviews=reviews,
-                            title='My Reviews')
-
+    return render_template('my_reviews.html', title='My Reviews',
+                            reviews=reviews)
 
 
 # USER SIGN OUT

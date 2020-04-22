@@ -1,9 +1,9 @@
-# **Awesome-Reads** [books(./static/images/book-clipart.png)]
+# *Awesome-Reads* (../images/book-clipart.png)
 
 This book review project is aimed at anyone who enjoys reading and talking about what they have read. Viewing & reviewing books, saving them in a library/list for future use,
 finding new books and Authors, reading other peoples reviews, reading qoutes from books they are interested in. I'm an avid reader and was pretty motivated 
 
-## **UX**
+## *UX*
 
 The Website is fully responsive and uses Mongo DB to hold users collection and a book reviews collection. The user is able to register and login and view reviews. Logged in users are able to Create, update (edit) and delete their own reviews. A user can also log out.
 
@@ -11,12 +11,18 @@ Each review on the home page can be clicked onto and that will load the single r
 
 The add review allows the logged in user to create a review and enter it onto the database.
 
-### **Project Goals**  
+### *Project Goals*  
 
 wireframes 
 
-## **User Stories**
+## *User Stories*
 
+> As a user I want to be able to make a review 
+>
+> As a user I want to be able to view other peoples reviews
+>
+> As a user I want to be able to keep my reviews for future reference
+>
 > As a user I want to be able to save the books I wanted to read in the future.
 >
 > As a user I want to be able to like books that I'm interest in.
@@ -33,7 +39,7 @@ wireframes
 
 
 
-## **Features**
+## *Features*
 
 1. Register and Login - I really enjoyed building the profile
 
@@ -43,7 +49,7 @@ wireframes
 
 
 
-## **Technolgoies Used**
+## *Technolgoies Used*
 
 Flask
 Flask Sessions
@@ -60,7 +66,7 @@ VsCode <3
 DevTools - especially the responsive clicker.
 & ATOM
 
-## **Testing** 
+## *Testing* 
 
 First test after setting up I didnt connect to MONGO - square brackets instead of round on MONGO_URI
 
