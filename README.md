@@ -92,7 +92,8 @@ The index page and reviews page is tested so that they load correctly. Some of m
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
 
 //This dude - who had the style project,
-I referred back here abit when I was unsure
+I referred back here abit when I was unsure what way to do things.
+Ishould reference the code but i never kept track of it, both projects are similiar.
 http://book-bites.herokuapp.com/addreview
 
 //Google images for the Jumbotron Image

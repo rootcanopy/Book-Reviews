@@ -32,74 +32,78 @@
     </div>
 {% endif %}
 
-<header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">AwesomeReads</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<div id="page-container">
+    <div id="content-wrap">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="{{ url_for('index') }}">AwesomeReads</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                
-                <ul class="navbar-nav ml-auto">#TODO
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('index') }}">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                <!-- IF USER LOGGED IN -->
-                {% if 'username' not in session %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('my_reviews') }}">My Reviews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('my_account') }}">My Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
-                    </li>
-                {% endif %}
-                </ul>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        
+                        <ul class="navbar-nav ml-auto">#TODO
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ url_for('index') }}">Home<span class="sr-only">(current)</span></a>
+                            </li>
+                        <!-- IF USER LOGGED IN -->
+                        {% if 'username' not in session %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                            </li>
+
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('my_reviews') }}">My Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('my_account') }}">My Account</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+                            </li>
+                        {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- FOR ERROR IN ERRORS - FORMS AND GENERAL -->
+        <div class"container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mt-3 mx-auto">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                        {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                </div>
             </div>
         </div>
-    </nav>
-</header>
-
-<!-- FOR ERROR IN ERRORS - FORMS -->
-<div class"container">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 mt-3 mx-auto">
-          {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
-        </div>
     </div>
+
+    <div class="container mt-5">
+        {% block content %} {% endblock content %}
+    </div>
+
+
+    <footer id="footer" class="py-5 bg-dark">
+            
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Awesome Reads 2020</p>
+            </div>
+            
+    </footer>
 </div>
-
-<div class="container mt-5">
-    {% block content %} {% endblock content%}
-</div>
-
-
-<footer class="py-5 bg-dark">
-        
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Awesome Reads 2020</p>
-        </div>
-        
-</footer>
 
     <!-- SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "></script>

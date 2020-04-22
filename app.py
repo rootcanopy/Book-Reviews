@@ -167,7 +167,7 @@ def logout():
     #SIGNS USER OUT AND CLEARS SESSION
     session.clear()
     flash('You have logged out', 'success')
-    return render_template('index', title='Home')
+    return render_template('index.html', title='Home')
 
 # APP RUN 
 if __name__ == '__main__':
