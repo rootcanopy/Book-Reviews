@@ -7,16 +7,16 @@
     <div class="card-body">
         <div class="row">
             <div class="col-12">
-                <!-- REUSING THE LOGIN AND REGISTER FORM -->
+            <!-- REUSING THE LOGIN AND REGISTER FORM -->
                 <form method="POST" action="/add_review">
                     <!-- TOKEN FOR CRSF -->
                     {{ form.hidden_tag() }}
                     <fieldset class="form-group">
                         <legend class="border-bottom mb-4">Add Review</legend>
-                        <!-- SECTION FOR AUTHOR -->
+                <!-- SECTION FOR AUTHOR -->
                         <div class="form-group">
                             {{ form.author.label(class="form-control-label") }}
-                        <!-- AUTHOR ERROR -->
+                    <!-- AUTHOR ERROR -->
                             {% if form.author.errors %}
                             {{ form.author(class="form-control form-control is-invalid") }}
                             <div class="invalid-feedback">
@@ -28,10 +28,10 @@
                             {{ form.author(class="form-control form-control") }}
                             {% endif %}
                         </div>                  
-                        <!-- SECTION FOR TITLE -->
+                    <!-- SECTION FOR TITLE -->
                         <div class="form-group">
                             {{ form.title.label(class="form-control-label") }}
-                        <!-- SECTION FOR TITLE ERROR -->
+                    <!-- SECTION FOR TITLE ERROR -->
                             {% if form.title.errors %}
                             {{ form.title(class="form-control form-control is-invalid") }}
                             <div class="invalid-feedback">
@@ -43,10 +43,10 @@
                             {{ form.title(class="form-control form-control") }}
                             {% endif %}
                         </div>
-                        <!-- SECTION FOR SUMMARY -->
+                    <!-- SECTION FOR SUMMARY -->
                         <div class="form-group">
                             {{ form.summary.label(class="form-control-label") }}
-                        <!-- SECTION FOR SUMMARY ERROR -->
+                    <!-- SECTION FOR SUMMARY ERROR -->
                             {% if form.summary.errors %}
                             {{ form.summary(class="form-control form-control is-invalid") }}
                             <div class="invalid-feedback">
@@ -58,10 +58,10 @@
                             {{ form.summary(class="form-control form-control") }}
                             {% endif %}
                         </div>
-                        <!-- SECTION FOR REVIEW -->
+                    <!-- SECTION FOR REVIEW -->
                         <div class="form-group">
                             {{ form.review.label(class="form-control-label") }}
-                        <!-- SECTION FOR REVIEW ERROR -->
+                    <!-- SECTION FOR REVIEW ERROR -->
                             {% if form.review.errors %}
                             {{ form.review(class="form-control form-control is-invalid") }}
                             <div class="invalid-feedback">
@@ -71,6 +71,36 @@
                             </div>
                             {% else %}
                             {{ form.review(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                    <!-- SECTION FOR IMAGE? -->
+                        <div class="form-group">
+                            {{ form.image.label(class="form-control-label") }}
+                    <!-- SECTION FOR IMAGE ERROR -->
+                            {% if form.image.errors %}
+                            {{ form.image(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.image.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.image(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                    <!-- SECTION FOR RATING -->
+                        <div class="form-group">
+                            {{ form.ratings.label(class="form-control-label") }}
+                    <!-- SECTION FOR RATING ERROR -->
+                            {% if form.ratings.errors %}
+                            {{ form.ratings(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.ratings.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.ratings(class="form-control form-control") }}
                             {% endif %}
                         </div>
 

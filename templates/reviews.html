@@ -2,8 +2,7 @@
 
 {%  block content %}
 
-    <!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
-    
+<!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
 <div class="row">
     <div class="col-12 mb-5">
         <div class="card">
@@ -37,8 +36,24 @@
                 <strong><i class="fa fa-user-circle" aria-hidden="true"></i></strong>
                 <span> {{ review.username }}</span>
                 <hr />
-                <!-- FULL REVIEW -->
-                <a class="btn btn-primary" href="{{ url_for('reviews', id=review._id) }}">Full Review</a>
+                <!-- RATINGS -->
+                <span class="book-title text-capitalize">
+                    <strong>Ratings:</strong></span>
+                <strong><i class="fas fa-star-half-alt" aria-hidden="true"></i></strong>
+                <span> {{ review.ratings }}</span>
+                <!-- CONDITIONAL OPTIONS FOR LOGGED IN USER -->
+                {% if ['logged_in'] == True %}
+                    <div class="row mb-4 text-center">
+                        <div class="col-12 col-md-6 mb-3"><a href="{{ (url_for('edit_review', id=review._id))}}"
+                            class="btn btn-info" title="Edit Review">Edit Review</a>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" title="Delete Review">
+                                Delete Review
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

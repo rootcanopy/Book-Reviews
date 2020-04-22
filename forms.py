@@ -26,5 +26,5 @@ class ReviewForm(FlaskForm):
     summary = TextAreaField('Summary',validators=[DataRequired()])
     review = TextAreaField('Review',validators=[DataRequired()])
     image = FileField('Image Only')
-    your_rating = IntegerField('Rating', validators=[DataRequired()])
+    ratings = IntegerField('Rating', validators=[DataRequired()])
     add_review = SubmitField('Add Review')

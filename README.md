@@ -31,14 +31,14 @@ The user profile I would have liked to have spent more time on, It was fun makin
 ## *Features*
 
 1. Register and Login - Flask_session 
-
 2. Profile dedicated to the user with their own reviews
+3. Image upload
+4. More error handling and @login_required to make profiles and data more secure
+5. Easy colors, easy on the eyes
+6. Create, Read, Update, Delete functionality
 
-3. 
+## *DataBase*
 
-. More error handling and @login_required to make profiles and data more secure
-
-4. 
 
 
 ## *User Stories*
@@ -64,10 +64,6 @@ The user profile I would have liked to have spent more time on, It was fun makin
 > As a user I want to be able to edit my review
 >
 > As a user I want to be able to delete my profile
-
-
-
-
 
 
 ## *Technolgoies Used*
