@@ -47,10 +47,11 @@ hr {
     color: black;
 }
 
-.searchbutton{
-    opacity: .7;
-    border-radius: .3rem;    
+.upvote {
+    margin-left:0
 }
+
+
 
 
 /* NAVBAR STYLES */

@@ -26,11 +26,9 @@
 
 
 <!-- USING A CARD TO LOOP THROUGH EACH REVIEW -->
-
-
 <div class="row">
 {% for review in reviews %}
-    <div class="col-lg-6 col-md-4 mt-5 mx-auto">
+    <div class="col-lg-6 col-md-6 mb-4">
         <div class="card" style="width: 20rem;">
             <img class="card-img-top bottom-border" src="{{ review.image }}" alt="Cover Image">
             
@@ -47,7 +45,7 @@
                 </span>
                 <hr />
                 <!-- BOOK SUMMARY -->
-                <span class="book-title text-capitalize">
+                <span class="book-title text-capitalize" data-toggle="collapse" data-taget="#card">
                     <strong>Summary:</strong></span>
                 <span class="text-capitalize">{{ review.summary }}</span>
                 <hr />
@@ -58,9 +56,9 @@
                 <span> {{ review.username }}</span>
                 <hr />
                 <!-- FULL REVIEW -->
-                <a class="btn btn-primary" href="#TODO">Full Review</a>
-                <span class="book-title">Upvotes:</span>
-                <span class="upvote"><i class="fas fa-thumbs-up"></i> # </span>
+                <a class="btn btn-primary" href="{{ url_for('reviews', id=review._id) }}">Full Review</a>
+                <span class="book-title upvote">Upvotes:</span>
+                <span class="upvote"><i class="fa fa-thumbs-up"></i></span>
             </div>
         </div>
     </div>
