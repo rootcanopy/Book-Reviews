@@ -1,0 +1,1 @@
+web: gunicorn book-review-ci:app
