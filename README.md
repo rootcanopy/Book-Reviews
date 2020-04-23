@@ -60,7 +60,7 @@ The project, like always, changed along the way but still turned out more or les
 
 <img width="800" height="800" src="./Docs/wireframe1.png"><img width="800" height="800" src="./Docs/wireframe2.png">
 <img width="800" height="800" src="./Docs/wireframe3.png"><img width="800" height="800" src="./Docs/stacked_page1.png">
-<img width="800" height="800" src="./Docs/stacked_page2.png"><img width="800" height="800" src="./Docs/stacked_page3.png">
+<img width="800" height="800" src="./Docs/stacked_page2.png">
 
 
 
