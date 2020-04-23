@@ -1,4 +1,4 @@
-# *Awesome-Reads* ![](./static/images/book-clipart.png=100x20)
+# *Awesome-Reads* <img align="left" width="100" height="100" src="./static/images/book-clipart.png">
 
 This book review project is aimed at anyone who enjoys reading and talking about what they have read. Viewing & reviewing books, saving them in a library/list for future use,
 finding new books and Authors, reading other peoples reviews, reading qoutes from books they are interested in. I'm an avid reader and was pretty motivated 
@@ -53,13 +53,18 @@ The project, like always, changed along the way but still turned out more or les
 >
 > As a user I want to be able to delete my profile
 
-![](./Docs/wireframe1.png=250x)
 
-### *Future Implementations
+**Wireframes**
+<img width="600" height="600" src="./Docs/wireframe1.png">
+
+
+
+### Future Implementations
 
 As stressful as these 2 weeks have been and how rushed the finished app is, as I type this I still really enjoyed the process. In the future version of this app it will be a 'Book Chat' app, that was the original plan along with GoodReads and sockets.. where users can continue uploading books and reviewing others collections, but also with instant chat using socket.io, and absolutely with an API such as GoodReads or the OpenLibrary to add more zest to the conversation and discovery.
 
 The user profile I would have liked to have spent more time on, It was fun making it basic. I still feel like this app is very incomplete and maybebuggy so I do definitely do see it as pet project upon finishing the course with CI.
+
 
 ## *Features*
 
