@@ -52,7 +52,8 @@ The project, like always, changed along the way but still turned out more or les
 >
 > As a user I want to be able to delete my profile
 
-[Wireframes for project](/static/Docs)
+[Wireframes for project](/Docs/wireframe1.png)
+[Docs for project](/home/dave/Documents/Book-Reviews/Docs)
 
 ### *Future Implementations
 
