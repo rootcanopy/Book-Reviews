@@ -55,7 +55,7 @@ The project, like always, changed along the way but still turned out more or les
 
 
 **Wireframes**
-<img width="600" height="600" src="./Docs/wireframe1.png">
+<img width="800" height="800" src="./Docs/wireframe1.png">
 
 
 
