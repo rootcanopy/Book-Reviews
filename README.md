@@ -10,7 +10,7 @@ The Website is fully responsive and is designed to be easy to navigate with litt
 
 Each review on the home page can be clicked onto and that will load the single review page which shows the entire entry. If the user created the review on their page they will be able to edit and delete the review, and also delete their profile when they need to.
 
-The add review allows the logged in user to create a review and enter it onto the database.
+The add review allows the logged in user to create a review and enter it onto the database.>
 
 ## *Project Goals*
 
@@ -54,8 +54,13 @@ The project, like always, changed along the way but still turned out more or les
 > As a user I want to be able to delete my profile
 
 
+
 **Wireframes**
-<img width="800" height="800" src="./Docs/wireframe1.png">
+
+
+<img width="800" height="800" src="./Docs/wireframe1.png"><img width="800" height="800" src="./Docs/wireframe2.png">
+<img width="800" height="800" src="./Docs/wireframe3.png"><img width="800" height="800" src="./Docs/stacked_page1.png">
+<img width="800" height="800" src="./Docs/stacked_page2.png"><img width="800" height="800" src="./Docs/stacked_page3.png">
 
 
 
