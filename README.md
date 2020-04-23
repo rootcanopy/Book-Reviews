@@ -186,6 +186,7 @@ I personally used vscode on my local machine to develop the site using Python 3.
 4. Run the requirements.txt file as appropriate to your IDE to install the relevant required packages dependencies for the project into your virtual environment.
 5. Run the app.py file as appropriate to your chosen environment and os.
 6. You should now be able to view the site on your localhost on port 5000.
+7. Due to a GitHub caching issue the env.py file was pushed, it has been removed and all passwords have been changed
 
 
 ## **Media & Resources**
