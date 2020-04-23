@@ -1,7 +1,8 @@
-# *Awesome-Reads* ![books](./static/images/book-clipart.png )
+# *Awesome-Reads* ![](./static/images/book-clipart.png=100x20)
 
 This book review project is aimed at anyone who enjoys reading and talking about what they have read. Viewing & reviewing books, saving them in a library/list for future use,
 finding new books and Authors, reading other peoples reviews, reading qoutes from books they are interested in. I'm an avid reader and was pretty motivated 
+
 
 ## *UX*
 
@@ -52,8 +53,7 @@ The project, like always, changed along the way but still turned out more or les
 >
 > As a user I want to be able to delete my profile
 
-[Wireframes for project](/Docs/wireframe1.png)
-[Docs for project](/home/dave/Documents/Book-Reviews/Docs)
+![](./Docs/wireframe1.png=250x)
 
 ### *Future Implementations
 
